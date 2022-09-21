@@ -4,12 +4,21 @@ import 'package:uni_pdf/uni_pdf_platform_interface.dart';
 import 'package:uni_pdf/uni_pdf_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-class MockUniPdfPlatform 
-    with MockPlatformInterfaceMixin
-    implements UniPdfPlatform {
-
+class MockUniPdfPlatform with MockPlatformInterfaceMixin implements UniPdfPlatform {
   @override
   Future<String?> getPlatformVersion() => Future.value('42');
+
+  @override
+  Future<bool?> isEncrypted(String path) {
+    // TODO: implement isEncrypted
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<bool?> isPasswordCorrect(String path, String password) {
+    // TODO: implement isPasswordCorrect
+    throw UnimplementedError();
+  }
 }
 
 void main() {
@@ -23,7 +32,7 @@ void main() {
     UniPdf uniPdfPlugin = UniPdf();
     MockUniPdfPlatform fakePlatform = MockUniPdfPlatform();
     UniPdfPlatform.instance = fakePlatform;
-  
+
     expect(await uniPdfPlugin.getPlatformVersion(), '42');
   });
 }

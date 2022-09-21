@@ -22,10 +22,26 @@ class UniPdfPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-    if (call.method == "getPlatformVersion") {
-      result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    } else {
-      result.notImplemented()
+    when (call.method) {
+        "getPlatformVersion" -> {
+          result.success("Android ${android.os.Build.VERSION.RELEASE}")
+        }
+        "isEncrypted"->{
+            val path = call.argument<String>("path")
+            val debugPath = "${IOUtils.cacheFolder}/pfile.pdf"
+            val isPdfEncrypted = isPdfEncrypted(path!!)
+            result.success(isPdfEncrypted)
+        }
+        "isPasswordCorrect"->{
+            val path = call.argument<String>("path")
+            val password = call.argument<String>("password")
+            val debugPath = "${IOUtils.cacheFolder}/pfile.pdf"
+            val isPasswordCorrect = isPasswordCorrect(path!!, password!!)
+            result.success(isPasswordCorrect)
+        }
+        else -> {
+          result.notImplemented()
+        }
     }
   }
 

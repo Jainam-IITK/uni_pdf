@@ -14,7 +14,7 @@ abstract class UniPdfPlatform extends PlatformInterface {
   ///
   /// Defaults to [MethodChannelUniPdf].
   static UniPdfPlatform get instance => _instance;
-  
+
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [UniPdfPlatform] when
   /// they register themselves.
@@ -25,5 +25,13 @@ abstract class UniPdfPlatform extends PlatformInterface {
 
   Future<String?> getPlatformVersion() {
     throw UnimplementedError('platformVersion() has not been implemented.');
+  }
+
+  Future<bool?> isEncrypted(String path) {
+    throw UnimplementedError('isEncrypted() has not been implemented.');
+  }
+
+  Future<bool?> isPasswordCorrect(String path, String password) {
+    throw UnimplementedError('isPasswordCorrect() has not been implemented.');
   }
 }

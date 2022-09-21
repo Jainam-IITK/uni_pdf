@@ -14,4 +14,14 @@ class MethodChannelUniPdf extends UniPdfPlatform {
     final version = await methodChannel.invokeMethod<String>('getPlatformVersion');
     return version;
   }
+
+  @override
+  Future<bool?> isEncrypted(String path) async {
+    return await methodChannel.invokeMethod<bool>('isEncrypted', {"path": path});
+  }
+
+  @override
+  Future<bool?> isPasswordCorrect(String path, String password) async {
+    return await methodChannel.invokeMethod<bool>('isPasswordCorrect', {"path": path, "password": password});
+  }
 }
