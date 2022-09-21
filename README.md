@@ -11,4 +11,4 @@ There are only 2 methods you can use
     Future<bool?> isEncrypted(String filePath)
     Future<bool?> isPasswordCorrect(String filePath, String password)
 
-I guess they are self explanatory in nature.
+I guess they are self explanatory in nature. 
