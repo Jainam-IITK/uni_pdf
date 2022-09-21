@@ -8,7 +8,7 @@ Used for checking :
 ## How to use
 There are only 2 methods you can use
 
-    Future<bool?> isEncrypted(String path)
-    Future<bool?> isPasswordCorrect(String path, String password)
+    Future<bool?> isEncrypted(String filePath)
+    Future<bool?> isPasswordCorrect(String filePath, String password)
 
 I guess they are self explanatory in nature.
