@@ -1,15 +1,14 @@
 # uni_pdf
 
-A new Flutter plugin project.
+Used for checking :
 
-## Getting Started
+1. Whether pdf has password
+2. validate correct password against custom input
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## How to use
+There are only 2 methods you can use
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    Future<bool?> isEncrypted(String path)
+    Future<bool?> isPasswordCorrect(String path, String password)
 
+I guess they are self explanatory in nature.
