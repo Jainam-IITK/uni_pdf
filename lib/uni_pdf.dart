@@ -5,11 +5,11 @@ class UniPdf {
     return UniPdfPlatform.instance.getPlatformVersion();
   }
 
-  Future<bool?> isEncrypted(String path) {
+  Future<bool> isEncrypted(String path) {
     return UniPdfPlatform.instance.isEncrypted(path);
   }
 
-  Future<bool?> isPasswordCorrect(String path, String password) {
+  Future<bool> isPasswordCorrect(String path, String password) {
     return UniPdfPlatform.instance.isPasswordCorrect(path, password);
   }
 }
