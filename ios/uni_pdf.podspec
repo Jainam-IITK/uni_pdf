@@ -5,7 +5,7 @@
 Pod::Spec.new do |s|
   s.name             = 'uni_pdf'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin project.'
+  s.summary          = 'Pdf Validation flutter plugin'
   s.description      = <<-DESC
 A new Flutter plugin project.
                        DESC
