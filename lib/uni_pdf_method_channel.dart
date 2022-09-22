@@ -16,12 +16,12 @@ class MethodChannelUniPdf extends UniPdfPlatform {
   }
 
   @override
-  Future<bool?> isEncrypted(String path) async {
-    return await methodChannel.invokeMethod<bool>('isEncrypted', {"path": path});
+  Future<bool> isEncrypted(String path) async {
+    return (await methodChannel.invokeMethod<bool>('isEncrypted', {"path": path}))!;
   }
 
   @override
-  Future<bool?> isPasswordCorrect(String path, String password) async {
-    return await methodChannel.invokeMethod<bool>('isPasswordCorrect', {"path": path, "password": password});
+  Future<bool> isPasswordCorrect(String path, String password) async {
+    return (await methodChannel.invokeMethod<bool>('isPasswordCorrect', {"path": path, "password": password}))!;
   }
 }

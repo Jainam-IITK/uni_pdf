@@ -9,14 +9,12 @@ class MockUniPdfPlatform with MockPlatformInterfaceMixin implements UniPdfPlatfo
   Future<String?> getPlatformVersion() => Future.value('42');
 
   @override
-  Future<bool?> isEncrypted(String path) {
-    // TODO: implement isEncrypted
+  Future<bool> isEncrypted(String path) {
     throw UnimplementedError();
   }
 
   @override
-  Future<bool?> isPasswordCorrect(String path, String password) {
-    // TODO: implement isPasswordCorrect
+  Future<bool> isPasswordCorrect(String path, String password) {
     throw UnimplementedError();
   }
 }

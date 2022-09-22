@@ -27,11 +27,11 @@ abstract class UniPdfPlatform extends PlatformInterface {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 
-  Future<bool?> isEncrypted(String path) {
+  Future<bool> isEncrypted(String path) {
     throw UnimplementedError('isEncrypted() has not been implemented.');
   }
 
-  Future<bool?> isPasswordCorrect(String path, String password) {
+  Future<bool> isPasswordCorrect(String path, String password) {
     throw UnimplementedError('isPasswordCorrect() has not been implemented.');
   }
 }
